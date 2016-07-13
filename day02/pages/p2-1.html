@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-2构造对象方法-工厂模式</title>
+</head>
+<body>
+<header>
+    <h1></h1>
+</header>
+<main>
+    <section>
+        <h1>2-2构造对象方法-工厂模式</h1>
+
+        <h2>工厂模式</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //构造水果对象的工厂函数
+            function createFruit(name,color,taste){
+                var fruit = {
+                    name:name,
+                    color:color,
+                    taste:taste
+                }
+                return fruit;
+            }
+
+            var apple = createFruit("苹果","红色","甜味");
+            var banan = createFruit("香蕉","黄色","香味");
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //构造水果对象的工厂函数
+    function createFruit(name,color,taste){
+        var fruit = {
+            name:name,
+            color:color,
+            taste:taste
+        }
+        return fruit;
+    }
+
+    var apple = createFruit("苹果","红色","甜味");
+    var banan = createFruit("香蕉","黄色","香味");
+</script>
+</html>

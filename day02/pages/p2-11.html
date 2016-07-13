@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<header>
+    <h1></h1>
+</header>
+<main>
+    <section>
+        <comment>
+            构造函数默认值可以使用如下方式创建
+        </comment>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+               // 构造函数默认值
+                function people(_name,_typte,_home){
+                    this.name = _name;
+                    this.type = _typte;
+                    this.home = _home;
+                }
+
+
+                function hero(_name,_typte,_home,_weapon){
+                    person.call(this,name,_typte,_home);
+                    this.weapon = _weapon?_weapon:'剑';//构造函数默认值
+                }
+
+                var zhangwuji = new hero("张无忌","剑客","武当山");
+                alert(zhangwuji.weapon);
+                //--------------------NED-------------------
+
+                //动态属性开始
+                //遍历属性
+                function traverseAttribute() {
+                    document.write("zhangwuji包含以下属性和方法<br/>");
+                    for(var item in zhangwuji){
+                        if(typeof item == "function"){
+                            document.write("zhangwuji包含方法:<br/>");
+                            document.write(i+" : " + zhangwuji[i]);
+                        }else{
+                            document.write("zhangwuji包含属性:<br/>");
+                            document.write(i+" : " + zhangwuji[i]);
+                        }
+                    }
+                }
+
+                zhangwuji.age = 32;
+                zhangwuji.parent = "XXX";
+                zhangwuji.say = function(){
+                    alert("我是你妹");
+                }
+                delete zhangwuji.age;
+                delete zhangwuji.say;
+                //----------------END--------------------------
+                //将一个对象当作另一个对象的属性
+                function Sword(_attr,_level){
+                    this.attr = _attr;
+                    this.level = _level;
+                }
+                var wp = new Sword('金属',100);
+                var zhangwuji = new hero("张无忌","剑客","武当山",wp);
+
+                alert(zhangwuji.weapon.attr);
+                alert(zhangwuji.weapon.level);
+                //-------------------END------------------------
+                //实现一个类对一个雷的继承
+                function Person() {
+                    this.type = "人";
+                }
+                Person.prototype.getType = function(){
+                    alert("这是一个人");
+                }
+
+                function Student(_name,_age){
+                    Person.call(this);
+                    this.name  = _name;
+                    this.age = _age;
+                }
+                Student.prototype.say = function(){
+                    alert("我是一个学生");
+                }
+
+                var zhangsan = new Student("张三",22);
+                alert(zhangsan.type);
+                alert(zhangsan.name);
+                alert(zhangsan.age);
+                zhangsan.say();
+                //------------END-------------------------------
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    // 构造函数默认值
+    function people(_name,_typte,_home){
+        this.name = _name;
+        this.type = _typte;
+        this.home = _home;
+    }
+
+
+    function hero(_name,_typte,_home,_weapon){
+        Person.call(this,name,_typte,_home);
+        this.weapon = _weapon?_weapon:'剑';//构造函数默认值
+    }
+
+    var zhangwuji = new hero("张无忌","剑客","武当山");
+    alert(zhangwuji.weapon);
+    //--------------------NED-------------------
+
+    //动态属性开始
+    //遍历属性
+    function traverseAttribute() {
+        document.write("zhangwuji包含以下属性和方法<br/>");
+        for(var item in zhangwuji){
+            if(typeof item == "function"){
+                document.write("zhangwuji包含方法:<br/>");
+                document.write(i+" : " + zhangwuji[i]);
+            }else{
+                document.write("zhangwuji包含属性:<br/>");
+                document.write(i+" : " + zhangwuji[i]);
+            }
+        }
+    }
+
+    zhangwuji.age = 32;
+    zhangwuji.parent = "XXX";
+    zhangwuji.say = function(){
+        alert("我是你妹");
+    }
+    delete zhangwuji.age;
+    delete zhangwuji.say;
+    //----------------END--------------------------
+    //将一个对象当作另一个对象的属性
+    function Sword(_attr,_level){
+        this.attr = _attr;
+        this.level = _level;
+    }
+    var wp = new Sword('金属',100);
+    var zhangwuji = new hero("张无忌","剑客","武当山",wp);
+
+    alert(zhangwuji.weapon.attr);
+    alert(zhangwuji.weapon.level);
+    //-------------------END------------------------
+    //实现一个类对一个雷的继承
+    function Person() {
+        this.type = "人";
+    }
+    Person.prototype.getType = function(){
+        alert("这是一个人");
+    }
+
+    function Student(_name,_age){
+        Person.call(this);
+        this.name  = _name;
+        this.age = _age;
+    }
+    Student.prototype.say = function(){
+        alert("我是一个学生");
+    }
+
+    var zhangsan = new Student("张三",22);
+    alert(zhangsan.type);
+    alert(zhangsan.name);
+    alert(zhangsan.age);
+    zhangsan.say();
+    //------------END-------------------------------
+</script>
+</html>

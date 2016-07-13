@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承(3)</title>
+</head>
+<body>
+<header>
+    <h1>继承(3)</h1>
+</header>
+<main>
+    <section>
+        <h1>继承(3)</h1>
+
+        <h2>对象冒充方法实现继承</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+              //使用对象冒充的方法实现继承
+            function monkey(_type,_home){
+                this.type = _type;
+                this.home = _home;
+            }
+
+            monkey.prototype.say = function(){
+                alert("我是快乐的小猴子,家住"+this.home);
+            }
+
+            function Magicmonkey(_type,_home,_skill){
+                //用对象冒充继承属性
+                monkey.apply(this,[_type,_home]);
+                this.skill = _skill;
+            }
+
+            Magicmonkey.prototype = new monkey();
+            Magicmonkey.prototype.say = function(){
+                alert("我会的技能是"+this.skill);
+            }
+
+            var wukong = new Magicmonkey("猴子","花果山");
+            alert(wukong.type);
+            alert(wukong.home);
+            wukong.say();
+            alert(wukong instanceof  monkey);
+            alert(wukong instanceof  Magicmonkey);
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //使用对象冒充的方法实现继承
+    function monkey(_type,_home){
+        this.type = _type;
+        this.home = _home;
+    }
+
+    monkey.prototype.say = function(){
+        alert("我是快乐的小猴子,家住"+this.home);
+    }
+
+    function Magicmonkey(_type,_home,_skill){
+        //用对象冒充继承属性
+        monkey.apply(this,[_type,_home]);
+        this.skill = _skill;
+    }
+
+    Magicmonkey.prototype = new monkey();
+    Magicmonkey.prototype.say = function(){
+        alert("我会的技能是"+this.skill);
+    }
+
+    var wukong = new Magicmonkey("猴子","花果山","分身术");
+    alert(wukong.type);
+    alert(wukong.home);
+    wukong.say();
+    alert(wukong instanceof  monkey);
+    alert(wukong instanceof  Magicmonkey);
+</script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>私有变量</title>
+</head>
+<body>
+<header>
+    <h1>私有变量</h1>
+</header>
+<main>
+    <section>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+             //-------------START---------------------
+                function fn(){
+                    var name;
+                }
+
+                //var _name = name; //erro
+            //-----------END------------------------
+
+            //-------------START---------------------
+               /* function people(_name,_age){
+                    this.name = _name;
+                    this.age  = _age;
+                }*/
+
+                function people(_name,_age){
+                    var name = _name; //私有变量
+                    var age  = _age;  //私有变量
+                    var say  = function(){alert("我是一个方法")} //私有方法
+                    //特权方法
+                    var _getName = function(){
+                        return name;
+                    }
+                    var _getAge  = function(){
+                        return age;
+                    }
+                    var _getSay  = function(){
+                        return say();
+                    }
+                }
+            // -----------END------------------------
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //-------------START---------------------
+    function fn(){
+        var name;
+    }
+
+    //var _name = name; //erro
+    //-----------END------------------------
+
+    //-------------START---------------------
+    /* function people(_name,_age){
+     this.name = _name;
+     this.age  = _age;
+     }*/
+
+    function people(_name,_age){
+        var name = _name; //私有变量
+        var age  = _age;  //私有变量
+        var say  = function(){alert("我是一个方法")} //私有方法
+        //特权方法
+        var _getName = function(){
+            return name;
+        }
+        var _getAge  = function(){
+            return age;
+        }
+        var _getSay  = function(){
+            return say();
+        }
+    }
+    // -----------END------------------------
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+<header>
+    <h1>闭包</h1>
+</header>
+<main>
+    <ul>
+        <li>常见的创建方式在函数内部创建另一个函数</li>
+        <li>闭包的第一个用途：通过闭包可以访问局部变量</li>
+        <li>闭包的第二个用途：可以让这些变量的值始终保持在内存中</li>
+        <li>有点：可以把局部变量驻留内存中，可以避免使用全局变量</li>
+    </ul>
+    <section>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //闭包
+            //----------START--------------------
+                function myfn() {
+                    return function (){
+                        alert("........");
+                    }
+                }
+                myfn()();
+            //-------------END---------------------
+                function fn1(){
+                    var local = "bb";
+                    return function (){
+                        return local;
+                    }
+                }
+                alert(fn1()());
+
+                var tampfn = fn1();
+                alert(tampfn());
+            //--------------END------------------
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //闭包
+    //----------START--------------------
+        function myfn() {
+            return function (){
+                alert("........");
+            }
+        }
+        myfn()();
+    //-------------END---------------------
+        function fn1(){
+            var local = "bb";
+            return function (){
+                return local;
+            }
+        }
+        alert(fn1()());
+
+        var tampfn = fn1();
+        alert(tampfn());
+    //--------------END------------------
+</script>
+</html>

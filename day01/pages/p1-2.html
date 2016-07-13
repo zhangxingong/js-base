@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数内部属性1</title>
+</head>
+<body>
+<header>
+    <h1>1-2函数内部属性1</h1>
+</header>
+<main>
+    <section>
+        <h1>函数的第一个默认属性arguments,代表参数集合数组</h1>
+        <h2>javascript的函数参数是按位置传入的，可以忽略没有传入的参数</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            function foo(a,b,c,d,e,f){
+                alert("这是一个点菜程序");
+                alert(arguments);
+                if(arguments.length>0){
+                    alert("客户点了如下菜：");
+                    for(var i=0;i<arguments.length;i++){
+                        alert(arguments[i]);
+                    }
+                }
+            }
+        </pre>
+        <em>见证奇迹的时刻..........</em>
+        <button onclick="foo('小炒肉','肉末粉丝','猪肝豆角','豇豆','辣子鸡')">测试一</button>
+    </section>
+</main>
+<footer>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    function foo(a,b,c,d,e,f){
+        alert("这是一个点菜程序");
+        alert(arguments);
+        if(arguments.length>0){
+            alert("客户点了如下菜：");
+            for(var i=0;i<arguments.length;i++){
+                alert(arguments[i]);
+            }
+        }
+    }
+
+</script>
+</html>

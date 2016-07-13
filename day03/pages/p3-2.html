@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包（2）</title>
+</head>
+<body>
+<header>
+    <h1>闭包（2）</h1>
+</header>
+<main>
+    <section>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //----------STAER---------------
+            var num = 100;
+            function add(){
+                return alert(num++);
+            }
+            add();add();add();
+            //----------END----------------
+            function fn(){
+                var count = 1000;
+                return function (){
+                    count++;
+                    alert(count);
+                }
+            }
+            fn()(); fn()();fn()();
+
+            var localfn = fn();
+
+            localfn();localfn();localfn();
+            localfn = null;
+            //-----------END---------------
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //----------STAER---------------
+    var num = 100;
+    function add(){
+        return alert(num++);
+    }
+    add();add();add();
+    //----------END----------------
+    function fn(){
+        var count = 1000;
+        return function (){
+            count++;
+            alert(count);
+        }
+    }
+    fn()(); fn()();fn()();
+
+    var localfn = fn();
+
+    localfn();localfn();localfn();
+    localfn = null;
+    //-----------END---------------
+</script>
+</html>

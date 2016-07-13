@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量作用域2</title>
+</head>
+<body>
+<header>
+    <h1></h1>
+</header>
+<main>
+    <p>
+        1.执行环节和作用域<br>
+        1>执行环境定义了变量和函数有权访问其他数据
+        2>全局执行环境是最外围的执行环境，在web浏览器中，全局执行环节是window对象，因此，所有的全局变量的函数都是作为window的属性和方法创建的
+    </p>
+    <p>
+        2.全局变量和局部变量
+        <br>
+        变量没有在函数内部声明或者声明的时候没有带var关键字就是全局变量，拥有全局作用域，window对象的所有属性拥有全局作用域；在代码任何地方都可以<br>
+        访问，函数内部声明并且以var修饰的变量就是局部变量，只能在函数体内使用，函数的参数虽然并没有使用var但仍然是局部变量。
+    </p>
+    <p>
+        3.内部环境可以访问所有的外部环境，但是外部环境不能访问内部环境中的任何变量和函数。
+        <2在变量的查询中，访问局部变量要比全局变量快。
+    </p>
+    <section>
+        <h1>变量作用域1</h1>
+        <h2></h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+
+        </pre>
+        <em>见证奇迹的时刻..........</em>
+        <button onclick="test()">测试变量</button>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    function test(){
+        me = "我是一个全局变量";
+        function tes(){
+            alert("我是一个全局函数");
+        }
+        alert(tes in window);
+        alert(window.hasOwnProperty("me"));
+    }
+</script>
+</html>

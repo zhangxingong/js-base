@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>匿名函数的声明和使用</title>
+</head>
+<body>
+<header>
+    <h1>匿名函数的声明和使用</h1>
+</header>
+<main>
+    <section>
+        <h3>
+            <ul>
+                <li>匿名函数和普通函数的区别是匿名函数不能直接使用，匿名函数没有名字</li>
+                <li>匿名函数自动运行的特性</li>
+                <li>匿名函数传递参数</li>
+            </ul>
+
+        </h3>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+           //-------------------START-------------
+            //匿名函数和普通函数的区别
+            function simplefn(){
+                alert("我是普通函数");
+            }
+
+            //调用普通函数
+            simplefn();
+            var anoymity =  function(){
+                alert("我是匿名函数");
+            }
+            //调用匿名函数
+            anoymity();
+            //-----------------END--------------
+            //匿名函数立即执行
+            //-----------------START-----------
+            //格式(Fn)(参数)
+            (function(){
+                alert("我是匿名函数，我立即执行了。")
+            })()
+            //-----------------END----------------
+            //传递参数
+            //-----------------START--------------
+            (function(value1,value2){
+                alert(value1 + value2);
+            })(1000,1000)
+            //----------------END-----------------
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //-------------------START-------------
+    //匿名函数和普通函数的区别
+    function simplefn(){
+        alert("我是普通函数");
+    }
+
+    //调用普通函数
+    simplefn();
+    var anoymity =  function(){
+        alert("我是匿名函数");
+    }
+    //调用匿名函数
+    anoymity();
+    //-----------------END--------------
+    //匿名函数立即执行
+    //-----------------START-----------
+    //格式(Fn)(参数)
+    (function(){
+        alert("我是匿名函数，我立即执行了。")
+    })()
+    //-----------------END----------------
+    //传递参数
+    //-----------------START--------------
+    (function(value1,value2){
+        alert(value1 + value2);
+    })(1000,1000)
+    //----------------END-----------------
+</script>
+</html>

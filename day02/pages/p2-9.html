@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承(1)</title>
+</head>
+<body>
+<header>
+    <h1>继承(1)</h1>
+</header>
+<main>
+    <section>
+        <h1>继承(1)</h1>
+
+        <h2>对象冒充方法实现继承</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //使用对象冒充的方法实现继承
+            function Monkey(type,name){
+                this.type = type;
+                this.name = name;
+            }
+
+            function Magic_Monkey(skill){
+                Monkey.call(this);
+                this.skill = skill;
+            }
+
+            var wukong = new Monkey("猴子","孙悟空");
+
+            var dasheng = new Magic_Monkey("三十二变");
+
+            alert(wukong.name);
+            alert(wukong.type);
+            alert(wukong.skill);
+            alert(dasheng.type);
+            alert(dasheng.name);
+        </pre>
+    </section>
+    <section>
+        <h2>使用原型链方法实现继承</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //使用原型链的方式实现继承
+            function fruit(){}
+            fruit.prototype.type = 0;
+
+            function apple(){}
+            apple.prototype = new fruit();
+            apple().prototype.name = "苹果";
+
+            alert(apple.isPrototypeOf("fruit"));
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //使用对象冒充的方法实现继承
+    function Monkey(type,name){
+        this.type = type;
+        this.name = name;
+    }
+
+    function Hero(_HP){
+        this.HP = _HP;
+    }
+
+    function Magic_Monkey(type,name,skill,_HP){
+        Monkey.apply(this,[type,name]);
+        Hero.call(this,_HP);
+        this.skill = skill;
+    }
+
+    var wukong = new Monkey("猴子","孙悟空");
+
+    var dasheng = new Magic_Monkey("三十二变");
+
+    alert(wukong.name);
+    alert(wukong.type);
+    alert(wukong.skill);
+    alert(dasheng.type);
+    alert(dasheng.name);
+
+    //使用原型链的方式实现继承
+    function fruit(){}
+    fruit.prototype.type = 0;
+
+    function apple(){}
+    apple.prototype = new fruit();
+    //新添加的属性要放在赋值之后
+    apple().prototype.name = "苹果";
+
+    alert(apple.isPrototypeOf("fruit"));
+    alert(apple.name);
+
+</script>
+</html>

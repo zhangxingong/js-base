@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-3函数内部属性2</title>
+</head>
+<body>
+<header>
+    <h1>1-3函数内部属性2</h1>
+    <h2>函数递归，函数内部属性callee</h2>
+</header>
+<main>
+    <section>
+        <h1>函数的第二个默认属性callee,代表自己函数的一个调用</h1>
+        <h2>javascript的函数参数是按位置传入的，可以忽略没有传入的参数</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //阶乘函数，函数递归使用
+            function foo(n){
+                var res = null;
+                if(n>1){
+                    res = n*arguments.callee(n-1)
+                }else{
+                    res = 1;
+                }
+
+            return res;
+            }
+        </pre>
+        <em>见证奇迹的时刻..........</em>
+        10的阶乘开始
+        <button onclick="foo(5)">测试一</button>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //阶乘函数，函数递归使用
+    function foo(n){
+        var res = null;
+        if(n>1){
+            res = n*arguments.callee(n-1)
+        }else{
+            res = 1;
+        }
+        var msg = "的阶乘结果是";
+        var br = "..............<br/>"
+        var date = " "+new Date();
+        document.write(n+msg+res+date+br);
+    return res;
+    }
+
+</script>
+</html>

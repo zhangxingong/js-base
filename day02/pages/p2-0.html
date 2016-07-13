@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-1构造对象方法-基本模式</title>
+</head>
+<body>
+<header>
+    <h1>2-1构造对象方法-基本模式</h1>
+</header>
+<main>
+    <section>
+        <h1>2-1构造对象方法-基本模式</h1>
+        <h2>普通方法</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+        var person = new Object();
+        person.name = "张三";
+        person.age = 19;
+        person.say = function(){
+            alert("我的名字是"+person.name);
+        }
+
+        var student = new Object();
+        student.name = "三毛";
+        student.age = 12;
+        stduent.study = function(){
+            alert("我的名字是"+student.name);
+        }
+        </pre>
+    </section>
+    <section>
+        <h2>特殊方法</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+        var person = {
+            name:"张三",
+            age:19,
+            say:function(){
+                alert("我的名字是"+person.name);
+            }
+            }
+
+        var student = {
+            name:"三毛",
+            age:19,
+            say:function(){
+                alert("我的名字是"+person.name);
+            }
+        }
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    var person = new Object();
+        person.name = "张三";
+        person.age = 19;
+        person.say = function(){
+            alert("我的名字是"+person.name);
+        }
+
+    var student = new Object();
+        student.name = "三毛";
+        student.age = 12;
+        stduent.study = function(){
+            alert("我的名字是"+student.name);
+        }
+
+    var person = {
+        name:"张三",
+        age:19,
+        say:function(){
+            alert("我的名字是"+person.name);
+        }
+        }
+
+    var student = {
+        name:"三毛",
+        age:19,
+        say:function(){
+            alert("我的名字是"+person.name);
+        }
+    }
+</script>
+</html>

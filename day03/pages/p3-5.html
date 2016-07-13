@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包中的this</title>
+</head>
+<body>
+<header>
+    <h1>闭包中的this</h1>
+</header>
+<main>
+    <section>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //-------------START---------------------
+            var name = "the window";
+            var obj = {
+                name:"I is a object.",
+                get:function(){
+                  return this.name;
+                }
+            }
+            alert(obj.get());
+            //-----------END------------------------
+
+            //-------------START---------------------
+            var name1 = "the window1";
+            var obj1 = {
+                name:"I is a object1.",
+                get:function(){
+                    return function (){
+                        //闭包里的this指的是window
+                        return this.name;
+                    }
+                }
+            }
+            alert(obj1.get()());
+            //-----------END------------------------
+
+            //-------------START---------------------
+            var name2 = "the window2";
+            var obj2 = {
+                name:"I is a object2.",
+                get:function(){
+                    return function (){
+                        //闭包里的this指的是window
+                        return this.name;
+                    }
+                }
+            }
+            alert(obj2.get()());
+            alert(obj2.get().call(obj2));
+            //-----------END------------------------
+
+            //-------------START---------------------
+            var name3 = "the window3";
+            var obj3 = {
+                name:"I is a object3.",
+                get:function(){
+                    //保存局部变量的this对象
+                    var self = this;
+                    return function (){
+                        //闭包里的this指的是window
+                        return self.name;
+                    }
+                }
+            }
+            alert(obj3.get()());
+            //-----------END------------------------
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //-------------START---------------------
+    var name = "the window";
+    var obj = {
+        name:"I is a object.",
+        get:function(){
+          return this.name;
+        }
+    }
+    alert(obj.get());
+    //-----------END------------------------
+
+    //-------------START---------------------
+    var name1 = "the window1";
+    var obj1 = {
+        name:"I is a object1.",
+        get:function(){
+            return function (){
+                //闭包里的this指的是window
+                return this.name;
+            }
+        }
+    }
+    alert(obj1.get()());
+    //-----------END------------------------
+
+    //-------------START---------------------
+    var name2 = "the window2";
+    var obj2 = {
+        name:"I is a object2.",
+        get:function(){
+            return function (){
+                //闭包里的this指的是window
+                return this.name;
+            }
+        }
+    }
+    alert(obj2.get()());
+    alert(obj2.get().call(obj2));
+    //-----------END------------------------
+
+    //-------------START---------------------
+    var name3 = "the window3";
+    var obj3 = {
+        name:"I is a object3.",
+        get:function(){
+            //保存局部变量的this对象
+            var self = this;
+            return function (){
+                //闭包里的this指的是window
+                return self.name;
+            }
+        }
+    }
+    alert(obj3.get()());
+    //-----------END------------------------
+</script>
+</html>

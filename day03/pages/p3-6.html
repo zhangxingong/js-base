@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模仿块级作用域</title>
+</head>
+<body>
+<header>
+    <h1>模仿块级作用域</h1>
+</header>
+<main>
+    <section>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //-------------START---------------------
+            function fn(){
+                for(var i =0;i<5;i++){}
+                var i ;
+                alert(i)
+            }
+            fn();
+            //-----------END------------------------
+
+            //-------------START---------------------
+            function fn2(){
+                (function (){
+                    for(var i =0;i<5;i++){}
+                })()
+
+                var i ; //error
+                alert(i)
+            }
+            fn2();
+            //-----------END------------------------
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //-------------START---------------------
+    function fn(){
+        for(var i =0;i<5;i++){}
+        var i ;
+        alert(i)
+    }
+    fn();
+    //-----------END------------------------
+
+    //-------------START---------------------
+    function fn2(){
+        (function (){
+            for(var i =0;i<5;i++){}
+        })()
+
+        var i ; //error
+        alert(i)
+    }
+    fn2();
+    //-----------END------------------------
+</script>
+</html>

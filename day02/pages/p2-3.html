@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-3构造对象方法-原型模式上</title>
+</head>
+<body>
+<header>
+    <h1></h1>
+</header>
+<main>
+    <section>
+        <h1>2-3构造对象方法-原型模式上</h1>
+
+        <h2>构造函数模式</h2>
+        <p>
+            基本方式 pk 构造工厂 pk 构造函数
+            基本方式代码耦合<br/>
+            工厂方式提高了代码可利用性<br/>
+            构造函数方式节约了内存<br/>
+        </p>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+           //创建水果类的构造函数
+            function fruit(name,color,taste){
+                this.name = name;
+                this.color = color;
+                this.taste = taste;
+                this.info = function(){
+                    alert("我是"+this.name+" ,我的颜色是"+this.color+" ,我的味道是"+this.taste);
+                }
+            }
+
+            var apple = new fruit("苹果","红色","甜味");
+            var banana = new fruit("香蕉","黄色","香味");
+
+            alert(apple instanceof fruit);
+            alert(banana instanceof fruit);
+            alert(apple.hasOwnProperty("name"));
+            alert(apple.hasOwnProperty("color"));
+            alert(apple.hasOwnProperty("taste"));
+            alert("name"   in apple);
+            alert("color"  in apple);
+            alert("taste"  in apple);
+            </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //创建水果类的构造函数
+    function fruit(name,color,taste){
+        this.name = name;
+        this.color = color;
+        this.taste = taste;
+        this.info = function(){
+            alert("我是"+this.name+" ,我的颜色是"+this.color+" ,我的味道是"+this.taste);
+        }
+    }
+
+    var apple = new fruit("苹果","红色","甜味");
+    var banana = new fruit("香蕉","黄色","香味");
+
+    alert(apple instanceof fruit);
+    alert(banana instanceof fruit);
+    alert(apple.hasOwnProperty("name"));
+    alert(apple.hasOwnProperty("color"));
+    alert(apple.hasOwnProperty("taste"));
+    alert("name"   in apple);
+    alert("color"  in apple);
+    alert("taste"  in apple);
+</script>
+</html>

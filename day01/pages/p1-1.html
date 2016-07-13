@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数作为参数</title>
+</head>
+<body>
+    <header>
+        <h1>1-1函数作为参数</h1>
+        <hr>
+        <h2>案例1-1：</h2>
+        <button onclick="foo2(foo1)">案例1</button>
+        <blockquote>见证奇迹的时刻..........</blockquote><br>
+        <pre>
+         function foo1() {
+                alert("我是一个普通函数");
+            }
+
+            function foo2(fun){
+                alert("我是一个特殊的参数，调用了函数"+fun);
+                alert("调用"+fun+"开始");
+                fun();
+                alert("调用"+fun+"结束");
+            }
+
+            //调用一下 函数当做参数
+            foo2(foo1);
+        </pre>
+        <h1>1-2函数返回值作为参数</h1>
+        <hr>
+        <h2>案例1-2:</h2>
+        <button onclick="foo3(foo1())">案例2</button>
+        <blockquote>见证奇迹的时刻..........</blockquote><br>
+        <pre>
+        function foo1() {
+        alert("我是一个普通函数");
+        }
+
+        function foo2(param){
+        alert("我是一个特殊的函数");
+        fun();
+        }
+
+        //调用一下 函数返回值当做参数
+        foo2(foo1());
+
+
+        </pre>
+    </header>
+    <main>
+        <a onclick="window.close();" href="javascript:void(0);">关闭</a>
+    </main>
+    <footer>
+        <abbr>powered by zhangxingong!!!</abbr>
+    </footer>
+</body>
+<link href="../css/common.css">
+<script type="text/javascript">
+    function foo1() {
+        alert("我是一个普通函数");
+    }
+
+    function foo3(param){
+        alert("我是一个特殊的函数");
+        fun();
+    }
+
+    function foo2(fun){
+        alert("我是一个特殊的参数，调用了函数,"+fun);
+        alert("调用"+fun+"开始");
+        fun();
+        alert("调用"+fun+"结束");
+    }
+
+    //调用一下
+    //foo2(foo1);
+
+</script>
+</html>

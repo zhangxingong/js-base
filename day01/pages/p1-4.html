@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-5函数的属性和方法</title>
+    <link href="../css/common.css">
+</head>
+<body>
+<header>
+    <h1>1-5函数的属性和方法</h1>
+</header>
+<main>
+    <section>
+        <h1>1-5函数的属性和方法</h1>
+        <h2>arguments.length,funtionNam.length,arguments.callee,apply,call</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            var log = document.write;
+
+            //定义一个普通函数
+            function test(param1,param2,param3){
+                alert(test.length);
+                alert(arguments.length);
+                log(test.length);
+                log(arguments.length);
+                log(test.length === arguments.length);
+            }
+        </pre>
+        <em>见证奇迹的时刻..........</em>
+        <button onclick="test(1,2,3)">测试函数的length属性，arguments的length属性</button>
+        <br>
+        <summary class="myfont">
+            <em>
+                test是一个对函数的引用，函数的length属性等价于arguments.length属性
+                test函数的本质是一个javascript对象
+                对象可以有属性
+                对象可以传参数用
+                对象可以拥有集合属性
+            </em>
+        </summary>
+    </section>
+    <section>
+        <hr>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //加法
+            function add(num1,num2){
+                return num1+num2;
+            }
+            function applyAdd(num1,num2){
+                return add.apply(this,[num1,num2]);
+            }
+
+            function testApply(){
+                var result = applyAdd(1,2);
+                alert("结果是："+result);
+            }
+        </pre>
+        <em>见证奇迹的时刻..........</em>
+        <button onclick="testApply()">测试函数的apply属性</button>
+    </section>
+    <section>
+        <hr>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //加法
+            function add(num1,num2){
+                return num1+num2;
+            }
+            // function of call
+            function callAdd(num1,num2){
+                return add.call(this,num1,num2);
+            }
+
+            // function of call
+            function testCall(){
+                var result = callAdd(3,4);
+                alert("结果是:"+result);
+            }
+        </pre>
+        <em>见证奇迹的时刻..........</em>
+        <button onclick="testCall()">测试函数的call属性</button>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    var log = document.write;
+
+    //定义一个普通函数  function of length , arguments
+    function test(param1,param2,param3){
+        alert(test.length);
+        alert(arguments.length);
+        alert(test.length === arguments.length)
+        log(test.length);
+        log(arguments.length);
+        log(test.length === arguments.length);
+    }
+    //加法  apply
+    function add(num1,num2){
+        return num1+num2;
+    }
+
+    function applyAdd(num1,num2){
+        return add.apply(this,[num1,num2]);
+    }
+
+    function callAdd(num1,num2){
+        return add.call(this,num1,num2);
+    }
+
+    function testApply(){
+        var result = applyAdd(1,2);
+        alert("结果是："+result);
+    }
+
+    // function of call
+    function testCall(){
+        var result = callAdd(3,4);
+        alert("结果是:"+result);
+    }
+
+</script>
+</html>

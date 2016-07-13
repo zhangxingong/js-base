@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-3构造对象方法-原型模式下</title>
+</head>
+<body>
+<header>
+    <h1></h1>
+</header>
+<main>
+    <section>
+        <h1>2-3构造对象方法-原型模式下</h1>
+
+        <h2>构造函数模式</h2>
+        <p>
+            纯原型方式无法区分对象之间的差别
+        </p>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //创建水果类的
+            function fruit(){}
+            fruit.prototype = {
+                constructor : fruit,
+                name  : "苹果",
+                color : "红色",
+                taste : "甜味",
+                info  : function(){
+                    alert("我是"+this.name+" ,我的颜色是"+this.color+" ,我的味道是"+this.taste);
+                }
+            }
+
+            var apple = new fruit();
+            var banana = new fruit();
+
+            alert(apple.constructor);
+            </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //创建水果类的
+    function fruit(){}
+    fruit.prototype = {
+        constructor : fruit,
+        name  : "苹果",
+        color : "红色",
+        taste : "甜味",
+        info  : function(){
+            alert("我是"+this.name+" ,我的颜色是"+this.color+" ,我的味道是"+this.taste);
+        }
+    }
+
+    var apple = new fruit();
+    var banana = new fruit();
+
+    alert(apple.constructor);
+    apple.info();
+    banana.info();
+</script>
+</html>

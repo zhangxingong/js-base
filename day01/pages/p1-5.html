@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量作用域1</title>
+</head>
+<body>
+<header>
+    <h1></h1>
+</header>
+<main>
+    <p>
+        1.基本类型有：Number，String，Boolean，Null，Undefined五种基本类型在javascript类型系统当中<br/>
+        所谓基本类型在内存中有固定大小分配<br/>
+        他们的值保存在栈空间，通过按值访问
+    </p>
+    <p>
+        2.用用类型：对象，数组，函数。
+        <br>
+        引用类型内存中占空间不固定，但是内存地址大小是固定的，因此存储的实际上是数据的内存地址。
+    </p>
+    <p>
+        3.在变量复制时候，基本类型复制的是值本身，而应用类型复制的是地址。
+    </p>
+    <section>
+        <h1>变量作用域1</h1>
+        <h2></h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            var log = document.write;
+            var a = 10;
+            log(typeof  a);
+            var b = 1.0
+            log(typeof b);
+            var c = true;
+            log(typeof c);
+            var d = false;
+            log(typeof d);
+            var d = null;
+            log(typeof  d);
+            var c = undefined;
+            log(typeof  c);
+            var str = "";
+            log(typeof  str);
+            var array = [];
+            log(typeof  array);
+            var fun1 = function(){}
+            log(typeof  fun1);
+            var obj = new Object();
+            log(typeof obj);
+        </pre>
+        <em>见证奇迹的时刻..........</em>
+        <button onclick="test()">测试变量</button>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    var now = new Date();
+    var log = function(content){
+        document.write(content+" "+now+"<br>");
+    }
+    function test(){
+        var a = 10;
+        log(typeof  a);
+        var b = 1.0
+        log(typeof b);
+        var c = true;
+        log(typeof c);
+        var d = false;
+        log(typeof d);
+        var d = null;
+        log(typeof  d);
+        var c = undefined;
+        log(typeof  c);
+        var str = "";
+        log(typeof  str);
+        var array = [];
+        log(typeof  array);
+        var fun1 = function(){}
+        log(typeof  fun1);
+        var obj = new Object();
+        log(typeof obj);
+
+    }
+</script>
+</html>

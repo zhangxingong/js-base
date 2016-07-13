@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量作用域3</title>
+</head>
+<body>
+<header>
+    <h1></h1>
+</header>
+<main>
+    <p>
+        一：Error属性
+
+        Error有两个基本的属性 name 和 message 。message用来表示异常的详细信息。而name指的是Error对象的构造函数。
+    </p>
+    <p>
+        二：Error类型
+
+        Javascript中Error还有几个子类EvalError，RangeError，ReferenceError，SyntaxError，TypeError，URIError，
+
+        EvalError：错误发生在eval()中
+        SyntaxError：语法错误,错误发生在eval()中,因为其它点发生SyntaxError会无法通过解释器
+        RangeError：数值超出范围
+        ReferenceError：引用不可用
+        TypeError：变量类型不是预期的
+        URIError：错误发生在encodeURI()或decodeURI()中
+    </p>
+    <p>
+        三：全局异常处理
+
+        javascript的window对象有一个特别的属性onerror，如果你将某个function赋值给window的onerror属性，那么但凡这个window中有javascript错误出现，该function都会被调用，也就是说这个function会成为这个window的错误处理句柄。不过，需要注意的是，我们需要让下面这段代码成为文件中的第一行代码：
+
+        window.onerror = function(msg, url, line) {
+        return true;
+        }
+
+        onerror句柄会3个参数分别是错误信息提示，产生错误的javascript的document ulr，错误出现的行号。
+
+        onerroe句柄的返回值也很重要，如果句柄返回true，表示浏览器无需在对该错误做额外的处理，也就是说浏览器不需要再显示错误信息。而如果返回的是false，浏览器还是会提示错误信息。
+    </p>
+    <section>
+        <h1>类型转换</h1>
+        <h2>1>转换函数</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+        
+        </pre>
+        <h2>2>构造函数</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+
+        </pre>
+        <h2>3>运算符，表达式，强制转换</h2>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    var number = "3.14";
+
+    alert(typeof number);
+
+    var pai = parseFloat(number);
+
+    alert(typeof pai);
+
+
+</script>
+</html>

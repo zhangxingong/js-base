@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环函数中的匿名函数和闭包(2)</title>
+</head>
+<body>
+<header>
+    <h1>循环函数中的匿名函数和闭包(2)</h1>
+</header>
+<main>
+    <section>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //----------------------START------------------------
+                function fn(){
+                    var arr = [];
+                    for(var i=0;i<5;i++){
+                        arr[i] = function(n){
+                            return  function (){
+                                return "第"+n+1+"个元素";
+                            }
+                        }(i);
+                    }
+                }
+                var tampfn = fn();
+                alert(tampfn.length);
+                for(var j;j<tampfn.length-1;j++){
+                    alert(tampfn[j]());
+                }
+                //---------------END----------------------------
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //----------------------START------------------------
+        function fn(){
+            var arr = [];
+            for(var i=0;i<5;i++){
+                arr[i] = function(n){
+                    return  function (){
+                        return "第"+n+1+"个元素";
+                    }
+                }(i);
+            }
+        }
+        var tampfn = fn();
+        alert(tampfn.length);
+        for(var j;j<tampfn.length-1;j++){
+            alert(tampfn[j]());
+        }
+        //---------------END----------------------------
+</script>
+</html>

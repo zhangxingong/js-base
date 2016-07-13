@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-3构造对象方法-动态原型模式</title>
+</head>
+<body>
+<header>
+    <h1></h1>
+</header>
+<main>
+    <section>
+        <h1>2-3构造对象方法-动态原型模式</h1>
+
+        <h2>构造函数模式</h2>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+           //创建水果类的构造函数
+            function fruit(name,color,taste){
+                this.name = name;
+                this.color = color;
+                this.taste = taste;
+                this.info = function(){
+                    alert("我是"+this.name+" ,我的颜色是"+this.color+" ,我的味道是"+this.taste);
+                }
+            }
+
+            var apple = new fruit("苹果","红色","甜味");
+            var banana = new fruit("香蕉","黄色","香味");
+            </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //创建水果类的构造函数
+    function fruit(name,color,taste){
+        this.name = name;
+        this.color = color;
+        this.taste = taste;
+        this.info = function(){
+            alert("我是"+this.name+" ,我的颜色是"+this.color+" ,我的味道是"+this.taste);
+        }
+    }
+
+    var apple = new fruit("苹果","红色","甜味");
+    var banana = new fruit("香蕉","黄色","香味");
+</script>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-3构造对象方法-动态原型模式</title>
+</head>
+<body>
+<header>
+    <h1>2-3构造对象方法-动态原型模式</h1>
+</header>
+<main>
+    <section>
+        <h1>2-3构造对象方法-动态原型模式</h1>
+
+        <h2>组合模式</h2>
+        <p>
+            混合模式结合了两种方式的优点
+        </p>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            //创建水果类的
+            function fruit(name,color,taste){
+                constructor : fruit,
+                this.name = name;
+                this.color = color;
+                this.taste = taste;
+                if(typeof  this.info != "function"){
+                    fruit.prototype = {
+                        info  : function(){
+                            alert("我是"+this.name+" ,我的颜色是"+this.color+" ,我的味道是"+this.taste);
+                        }
+                    }
+                }
+            }
+
+
+            var apple = new fruit();
+            var banana = new fruit();
+
+            alert(apple.constructor);
+            alert(apple.info());
+            alert(banana.info());
+            </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    //创建水果类的
+    function fruit(name,color,taste){
+        constructor : fruit,
+        this.name = name;
+        this.color = color;
+        this.taste = taste;
+        if(typeof  this.info != "function"){
+            fruit.prototype = {
+                info  : function(){
+                    alert("我是"+this.name+" ,我的颜色是"+this.color+" ,我的味道是"+this.taste);
+                }
+            }
+        }
+    }
+
+
+    var apple = new fruit();
+    var banana = new fruit();
+
+    alert(apple.constructor);
+    alert(apple.info());
+    alert(banana.info());
+</script>
+</html>
