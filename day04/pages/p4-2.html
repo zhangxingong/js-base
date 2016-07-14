@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JavaScript美术馆</title>
+</head>
+<body>
+<main>
+    <h1>Snapshots</h1>
+
+    <h2>会跳转的图片</h2>
+    <ul id="imageList">
+        <li><a href="../images/03-005442_113.jpg"  title="给迷茫的你">给迷茫的你</a></li>
+        <li><a href="../images/03-005436_512.jpg" title="给等爱的你<">给等爱的你</a></li>
+        <li><a href="../images/03-005438_373.jpg" title="给未来的你">给未来的你</a></li>
+        <li><a href="../images/03-005438_715.jpg" title="给睿智的你">给睿智的你</a></li>
+        <li><a href="../images/03-005439_583.jpg" title="给自信的你">给自信的你</a></li>
+        <li><a href="../images/03-005441_903.jpg" title="给年轻的你">给年轻的你</a></li>
+        <li><a href="../images/03-005443_111.jpg" title="给勇敢的你">给勇敢的你</a></li>
+        <li><a href="../images/03-005443_863.jpg" title="给努力的你">给努力的你</a></li>
+    </ul>
+    <hr>
+    <h2>会预览的图片</h2>
+    <ul>
+        <li><a href="../images/03-005442_113.jpg" title="给迷茫的你" onclick="showPic(this);return false;">给迷茫的你</a></li>
+        <li><a href="../images/03-005436_512.jpg" title="给等爱的你" onclick="showPic(this);return false;">给等爱的你</a></li>
+        <li><a href="../images/03-005438_373.jpg" title="给未来的你" onclick="showPic(this);return false;">给未来的你</a></li>
+        <li><a href="../images/03-005438_715.jpg" title="给睿智的你" onclick="showPic(this);return false;">给睿智的你</a></li>
+        <li><a href="../images/03-005439_583.jpg" title="给自信的你" onclick="showPic(this);return false;">给自信的你</a></li>
+        <li><a href="../images/03-005441_903.jpg" title="给年轻的你" onclick="showPic(this);return false;">给年轻的你</a></li>
+        <li><a href="../images/03-005443_111.jpg" title="给勇敢的你" onclick="showPic(this);return false;">给勇敢的你</a></li>
+        <li><a href="../images/03-005443_863.jpg" title="给努力的你" onclick="showPic(this);return false;">给努力的你</a></li>
+    </ul>
+    <hr>
+    <img id="palceholder" src="../images/34858PIC6sf_1024.jpg" title="占位符图片" width="450px" height="450px">
+    <hr>
+    <a href="return false;">这个链接是否跳转，跟函数返回值是否为true相关</a>
+</main>
+</body>
+<script type="text/javascript">
+    function showPic(whichPic){
+        var source = whichPic.getAttribute("href");
+        var placeholder = window.document.getElementById("palceholder");
+        placeholder.setAttribute("src",source);
+    }
+</script>
+</html>
