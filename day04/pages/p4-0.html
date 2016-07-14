@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>dom常用方法</title>
+</head>
+<body>
+<section>
+    <h2>dom常用方法</h2>
+
+    <p> 1.getElementById 使用元素的Id获取dom元素</p>
+    <p>   2.getElementsByTagName 使用name获取dom元素</p>
+    <p>    3.setAttribute  设置dom的属性</p>
+    <p>   4.getAttribute  获取dom的属性</p>
+
+    <label>请输入你的姓名：</label>
+    <input type="text" name="name" id="cus" placeholder="输入你的姓名">
+    <br>
+    <span id="content">
+
+    </span>
+</section>
+<pre>
+    console.log("-------------------------------START-----------------------");
+
+    var cusName = null; // define varible
+    var content = null; // define varible
+
+
+    cusName = document.getElementById("cus");
+    content = document.getElementById("content");
+
+    console.log(cusName);
+    console.log(content);
+
+    console.log(typeof  cusName);
+    console.log(typeof  content);
+
+    console.log(cusName instanceof Node);
+    console.log(content instanceof Node);
+
+    console.log(cusName.nodeType);
+    console.log(cusName.nodeName);
+    console.log(cusName.nodeValue);
+
+    console.log(content.nodeType);
+    console.log(content.nodeName);
+    console.log(content.nodeValue);
+
+    console.log("name.cus :" + cusName);
+    console.log("name.content: " +content);
+
+    content.setAttribute("innerHtml","哈哈哈哈");
+
+    console.log("-------------------------------END-----------------------");
+</pre>
+<img src="../images/p4-001.jpg">
+</body>
+<script type="text/javascript">
+    console.log("-------------------------------START-----------------------");
+    var cusName = null; // define varible
+    var content = null; // define varible
+
+
+    cusName = document.getElementById("cus");
+    content = document.getElementById("content");
+
+    console.log(cusName);
+    console.log(content);
+
+    console.log(typeof  cusName);
+    console.log(typeof  content);
+
+    console.log(cusName instanceof Node);
+    console.log(content instanceof Node);
+
+    console.log(cusName.nodeType);
+    console.log(cusName.nodeName);
+    console.log(cusName.nodeValue);
+
+    console.log(content.nodeType);
+    console.log(content.nodeName);
+    console.log(content.nodeValue);
+
+    console.log("name.cus :" + cusName);
+    console.log("name.content: " +content);
+
+    content.setAttribute("innerHtml","哈哈哈哈");
+
+    console.log("-------------------------------END-----------------------");
+
+</script>
+</html>
