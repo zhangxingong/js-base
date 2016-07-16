@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<header>
+    <h1></h1>
+</header>
+<main>
+    <div id="testdiv">
+        <p>This is <em>my</em> content.</p>
+    </div>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    window.onload = function(){
+        var testdiv = document.getElementById("testdiv");
+        alert(testdiv.innerHTML);
+    }
+</script>
+</html>
