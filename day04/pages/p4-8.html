@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>插入内容</title>
+    <title>创建标记</title>
 </head>
 <body>
 <header>
@@ -12,10 +12,9 @@
     <section>
         <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
         <pre>
-            <script type="text/javascript" src="../js/insertParagraph.js"></script>
-            <script type="text/javascript">
-                insertParagraph("this is insert content.");
-            </script>
+            <div id="testdiv">
+
+            </div>
         </pre>
     </section>
 </main>
@@ -24,4 +23,11 @@
     <abbr>powered by zhangxingong!!!</abbr>
 </footer>
 </body>
+<script type="text/javascript">
+    var testdiv = document.getElementById("testdiv");
+    var para = document.createElement("p");
+    var message = document.createTextNode("Hello World.");
+    testdiv.appendChild(para);
+    para.appendChild(message);
+</script>
 </html>
