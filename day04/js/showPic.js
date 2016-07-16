@@ -47,5 +47,7 @@ function prepareGallary(){//添加了方法坚持
         links[i].onclick = function(){
             return !showPic(this);
         }
+        //支持键盘事件
+        links[i].onkeypress = links[i].onclick;
     }
 }
