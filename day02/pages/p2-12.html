@@ -21,6 +21,14 @@
     f.prototype = p; //将原型属性设置为p
     return new  f(); //使用f()创建p的继承对象
     }
+    var o = {};
+    o.x = 1;
+    var p = inherit(o);
+    p.y = 2;
+    var q = inherit(p);
+    q.z  = 3;
+    var s = q.toString();
+    console.log(q.x + q.y) ;
     </pre>
 </code>
 </body>
@@ -39,5 +47,14 @@
         f.prototype = p; //将原型属性设置为p
         return new  f(); //使用f()创建p的继承对象
     }
+
+    var o = {};
+    o.x = 1;
+    var p = inherit(o);
+    p.y = 2;
+    var q = inherit(p);
+    q.z  = 3;
+    var s = q.toString();
+    console.log(q.x + q.y) ;
 </script>
 </html>
