@@ -88,3 +88,36 @@ function classOf(o){
     if(o === undefined) return "Undefined";
     return Object.prototype.toString().call(o).slice(8,-1);
 }
+/**
+ * inherit() 返回了一个继承自原型对象p的属性的新对象
+ * @param p
+ * @returns {*}
+ */
+//这里使用ECMAScript 5中的Object.create()函数 (如果存在的话)
+//如果不存在Object.create()，则退化使用其他方法
+function inherit(p){
+    if( p == null ) throw TypeError();
+    if(Object.create){      //如果Object.create()存在
+        return Object.create(p); //直接使用它
+    }
+    var t = typeof p; //否则进一步检测
+    if( t !== "object" && t !== "function") throw TypeError();
+    function f() {}; //定义一个空构造函数
+    f.prototype = p; //将原型属性设置为p
+    return new  f(); //使用f()创建p的继承对象
+}
+/**
+ * 用以定义简单类的函数
+ * @param constructor
+ * @param methods
+ * @param statics
+ * @returns {*}
+ */
+function  defineClass(constructor,//用以设置实例的属性函数
+                      methods,    // 实例的方法，复制至原型中
+                      statics)    // 类属性，复制至构造函数中
+{
+    if(methods) extend(constructor.prototype,methods);
+    if(statics) extend(constructor,statics);
+    return constructor;
+}
