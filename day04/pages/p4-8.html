@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建标记</title>
+</head>
+<body>
+<header>
+    <h1></h1>
+</header>
+<main>
+    <section>
+        <blockquote>每天解决一个bug，进步一点点。。。</blockquote>
+        <pre>
+            <div id="testdiv">
+
+            </div>
+        </pre>
+    </section>
+</main>
+<footer>
+    <a href="javascript:void(0)" onclick="window.close();">关闭</a>
+    <abbr>powered by zhangxingong!!!</abbr>
+</footer>
+</body>
+<script type="text/javascript">
+    var testdiv = document.getElementById("testdiv");
+    var para = document.createElement("p");
+    var message = document.createTextNode("Hello World.");
+    testdiv.appendChild(para);
+    para.appendChild(message);
+</script>
+</html>
