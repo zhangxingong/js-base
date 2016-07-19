@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>继承(5)</title>
+</head>
+<body>
+<code>
+    <pre>
+     //inherit() 返回了一个继承自原型对象p的属性的新对象
+    //这里使用ECMAScript 5中的Object.create()函数 (如果存在的话)
+    //如果不存在Object.create()，则退化使用其他方法
+    function inherit(p){
+    if( p == null ) throw TypeError();
+    if(Object.create){      //如果Object.create()存在
+    return Object.create(p); //直接使用它
+    }
+    var t = typeof p; //否则进一步检测
+    if( t !== "object" && t !== "function") throw TypeError();
+    function f() {}; //定义一个空构造函数
+    f.prototype = p; //将原型属性设置为p
+    return new  f(); //使用f()创建p的继承对象
+    }
+    </pre>
+</code>
+</body>
+<script type="text/javascript">
+    //inherit() 返回了一个继承自原型对象p的属性的新对象
+    //这里使用ECMAScript 5中的Object.create()函数 (如果存在的话)
+    //如果不存在Object.create()，则退化使用其他方法
+    function inherit(p){
+        if( p == null ) throw TypeError();
+        if(Object.create){      //如果Object.create()存在
+            return Object.create(p); //直接使用它
+        }
+        var t = typeof p; //否则进一步检测
+        if( t !== "object" && t !== "function") throw TypeError();
+        function f() {}; //定义一个空构造函数
+        f.prototype = p; //将原型属性设置为p
+        return new  f(); //使用f()创建p的继承对象
+    }
+</script>
+</html>
