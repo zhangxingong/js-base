@@ -121,3 +121,35 @@ function  defineClass(constructor,//用以设置实例的属性函数
     if(statics) extend(constructor,statics);
     return constructor;
 }
+/**
+ * 保存键值对到cookie
+ * @param name
+ * @param value
+ * @param daysToLive
+ */
+function setcookie(name,value,daysToLive){
+    var cookie = name + "=" + encodeURIComponent(value);
+    if(typeof daysToLive === "number")
+        cookie += "; max-age=" + (daysToLive*60*60*24);
+    document.cookie = cookie;
+}
+/**
+ *
+ * @returns {{}}
+ */
+function getcookie(){
+    var cookie = {};
+    var all = document.cookie;
+    if(all === "")
+     return cookie;
+    var list = all.split("; ");
+    for(var i =0; i < list.length;i++){
+         var cookie = list[i];
+         var p = cookie.indexOf("=");
+        var  name = cookie.substring(0,p);
+        var  value = cookie.substring(p+1);
+        value = decodeURIComponent(value);
+        cookie[name] = value;
+    }
+    return cookie;
+}
