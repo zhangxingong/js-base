@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>寄生组合式继承</title>
+</head>
+<body>
+    <h2>寄生组合式继承</h2>
+<pre>
+    function inheritPrototype(subType,superType){
+        var prototype = Object(subType.prototype);//创建对象
+        prototype.constructor = subType;
+        subType.prototype = prototype;
+    };
+
+    function SuperType(name){
+        this.name = name;
+        this.colors = ["red","blue","green"];
+    };
+
+    SuperType.prototype.sayName = function(){
+        alert(this.name);
+    };
+
+    function SubType(name,age){
+        SuperType.call(this,name);
+
+        this.age = age;
+    };
+
+    inheritPrototype(SubType,SuperType);
+
+    SubType.prototype.sayAge = function(){
+        alert(this.age);
+    };
+</pre>
+</body>
+<script type="text/javascript">
+    function inheritPrototype(subType,superType){
+        var prototype = Object(subType.prototype);//创建对象
+        prototype.constructor = subType;
+        subType.prototype = prototype;
+    };
+
+    function SuperType(name){
+        this.name = name;
+        this.colors = ["red","blue","green"];
+    };
+
+    SuperType.prototype.sayName = function(){
+        alert(this.name);
+    };
+
+    function SubType(name,age){
+        SuperType.call(this,name);
+
+        this.age = age;
+    };
+
+    inheritPrototype(SubType,SuperType);
+
+    SubType.prototype.sayAge = function(){
+        alert(this.age);
+    };
+
+</script>
+</html>
