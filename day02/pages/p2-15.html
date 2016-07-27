@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>稳妥构造函数模式</title>
+</head>
+<body>
+<h2>稳妥构造函数模式</h2>
+<pre>
+    function People(name,age,job){
+        var o = new Object();
+        o.name = name;
+        o.age  = age;
+        o.sayName = function(){
+            alert(name);
+        }
+        return o;
+    }
+
+    var friend = new Person("Nicholas",29,"Software Engineer");
+    friend.sayName();
+</pre>
+</body>
+<script type="text/javascript">
+    function People(name,age,job){
+        var o = new Object();
+        o.name = name;
+        o.age  = age;
+        o.sayName = function(){
+            alert(name);
+        }
+        return o;
+    }
+
+    var friend = new Person("Nicholas",29,"Software Engineer");
+    friend.sayName();
+</script>
+</html>
