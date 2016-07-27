@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>原型式继承</title>
+</head>
+<body>
+<h2>原型式继承</h2>
+<pre>
+    function object(o){
+        function F(){}
+        F.prototype = o; //浅拷贝
+        return new F();
+    }
+
+    var person = {
+        name : "Nicholas",
+        friends:["Shelby","Court","Van"]
+    };
+
+    var anotherPerson = object(person);
+    anotherPerson.name = "Greg";
+    anotherPerson.friends.push("Rob");
+
+    var yetAnohterPerson = object(person);
+    yetAnohterPerson.name = "Linda";
+    yetAnohterPerson.friends.push("Barbie");
+
+    alert(person.friends); // "Shelby","Court","Van","Rob","Barbie"
+    //----------------------分割线---------------------------------
+    //----------------------ECMA5 create()规范化了原型继承
+    var person = {
+        name : "Nicholas",
+        friends:["Shelby","Court","Van"]
+    };
+
+    var anotherPerson = Object.create(person);
+    anotherPerson.name = "Greg";
+    anotherPerson.friends.push("Rob");
+
+    var yetAnohterPerson = Object.create(person);
+    yetAnohterPerson.name = "Linda";
+    yetAnohterPerson.friends.push("Barbie");
+
+</pre>
+</body>
+<script type="text/javascript">
+    function object(o){
+        function F(){}
+        F.prototype = o; //浅拷贝
+        return new F();
+    }
+
+    var person = {
+        name : "Nicholas",
+        friends:["Shelby","Court","Van"]
+    };
+
+    var anotherPerson = object(person);
+    anotherPerson.name = "Greg";
+    anotherPerson.friends.push("Rob");
+
+    var yetAnohterPerson = object(person);
+    yetAnohterPerson.name = "Linda";
+    yetAnohterPerson.friends.push("Barbie");
+
+    alert(person.friends); // "Shelby","Court","Van","Rob","Barbie"
+    //----------------------分割线---------------------------------
+    //----------------------ECMA5 create()规范化了原型继承
+    var person = {
+        name : "Nicholas",
+        friends:["Shelby","Court","Van"]
+    };
+
+    var anotherPerson = Object.create(person);
+    anotherPerson.name = "Greg";
+    anotherPerson.friends.push("Rob");
+
+    var yetAnohterPerson = Object.create(person);
+    yetAnohterPerson.name = "Linda";
+    yetAnohterPerson.friends.push("Barbie");
+
+</script>
+</html>
