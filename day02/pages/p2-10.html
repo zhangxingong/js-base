@@ -32,6 +32,7 @@
             }
 
             Magicmonkey.prototype = new monkey();
+            Magicmonkey.prototype.constructor = Magicmonkey;//非必须
             Magicmonkey.prototype.say = function(){
                 alert("我会的技能是"+this.skill);
             }
@@ -68,6 +69,7 @@
     }
 
     Magicmonkey.prototype = new monkey();
+    Magicmonkey.prototype.constructor = Magicmonkey;//非必须
     Magicmonkey.prototype.say = function(){
         alert("我会的技能是"+this.skill);
     }
